@@ -10,6 +10,7 @@ Create a ToDo List Application. You are free to use any frameworks and libraries
 
 ### Basic requirements
 
+- Show the List of ToDo entries
 - Availability to create an ToDo entry
 - ToDo entry can be marked as Done and Undone
 - ToDo entry can be deleted
