@@ -28,6 +28,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "https://inopai.com",
   "browserslist": {
     "production": [
       ">0.2%",

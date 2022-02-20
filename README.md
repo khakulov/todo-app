@@ -1,6 +1,118 @@
-# Getting Started with Create React App
+# ToDo Task Template
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Task
+
+Create a ToDo List Application. You are free to use any frameworks and libraries.
+
+## Functional requirements
+
+### Basic requirements
+
+- Availability to create an ToDo entry
+- ToDo entry can be marked as Done and Undone
+- ToDo entry can be deleted
+
+### Advanced requirements
+
+- Change postions of ToDo entries by Drag and Drop
+- Archive / Unarchive ToDo entries, Show Archived and Unarchived ToDo entries
+
+### More advanced requirements
+
+- Show Login Page
+- Show List of Groups and availablity to select group where the ToDo entry will be created
+- Use Routing for all Pages also for ToDo entries
+- TypeScript Typings
+- Search entries and change order
+
+## API
+
+There are file called `api.ts` with function to store data in `inopai.com`.
+
+`login()`
+
+Before performing any action with API, you have to login first.
+
+```typescript
+// login with authentication data from .env file
+await login();
+
+// for login with email and password
+await login(email: string, password: string);
+```
+
+`logout()`
+
+Logout function
+
+```typescript
+await logout();
+```
+
+`checkLogin()`
+
+To check if user is logged in
+
+```typescript
+await checkLogin();
+```
+
+`entrySearch()`
+
+Load existing entries from API
+
+```typescript
+// Load entries from group defined in .env file
+await entrySearch();
+
+// Load entries from given group
+await entrySearch(groupId: number);
+```
+
+`entryCreate()`
+
+Create new ToDo entry
+
+```typescript
+// Create ToDo entry in group defined in .env file
+await entryCreate("Buy an Apple");
+
+// Create ToDo entry with position
+await entryCreate(title: string, position: number);
+
+// Create ToDo entry in group given group
+await entryCreate(title: string, position: number, groupId: number);
+```
+
+`entryUpdate()`
+
+Update the ToDo entry
+
+```typescript
+// Update ToDo entry in group defined in .env file
+await entryUpdate(entryId: number, title: string, done?: boolean);
+
+// More advanced
+await entryCreate(
+    entryId: number,
+    title: string,
+    done?: boolean,
+    position?: number,
+    archived?: boolean,
+)
+
+```
+
+`entryDelete()`
+
+Delete the ToDo entry
+
+```typescript
+// Update ToDo entry in group defined in .env file
+await entryDelete(entryId: number);
+```
 
 ## Available Scripts
 
@@ -18,29 +130,3 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
